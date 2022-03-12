@@ -30,7 +30,7 @@ run-jupyter:
 		--name pandas-notebook \
 		-v "${NOTEBOOKS}":/usr/local/src bitsofparag/pandas:jupyter
 
-publish: dist jupyter
+publish: dist
 	@echo "Publishing pandas image version ${VERSION}..."
 	@docker image push bitsofparag/pandas:${VERSION}
 	@docker image push bitsofparag/pandas:${VERSION}-jupyter
