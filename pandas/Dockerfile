@@ -50,6 +50,7 @@ LABEL author="Parag M."
 LABEL description="Minimal image for running pandas-based packages"
 
 ARG ENV_NAME=base
+ARG MAMBA_USER=mambauser
 
 COPY --from=build --chown=$MAMBA_USER:$MAMBA_USER /opt/conda/envs/${ENV_NAME} /opt/conda
 
