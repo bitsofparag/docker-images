@@ -22,8 +22,7 @@ Assuming you have Docker installed,
 docker pull bitsofparag/pandas:1.4.1
 docker pull bitsofparag/pandas:1.4.1-jupyter
 ```
-
-> To use the latest images, just replace '1.4.1' with 'latest'
+To use the latest images, just replace '1.4.1' with 'latest'
 
 ## Usage examples
 
@@ -45,7 +44,6 @@ docker run -it --rm \
   bitsofparag/pandas:1.4.1-jupyter
 ```
 Open http://localhost:8888 to access the notebook.
-
 
 <!-- Markdown link & img badges -->
 [pandas-ci-img]: https://github.com/bitsofparag/docker-images/actions/workflows/pandas.yml/badge.svg
