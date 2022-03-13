@@ -26,14 +26,7 @@ jobs:
         with:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_PAT }}
-      - name: Get changed files
-        id: changed-pandas-files
-        uses: tj-actions/changed-files@v17.3
-        with:
-          files: |
-            ./pandas
-      - name: Publish pandas image if changed
-        if: steps.changed-pandas-files.outputs.any_changed == 'true'
+      - name: Publish pandas images
         run: |
           cd pandas
           make dist
