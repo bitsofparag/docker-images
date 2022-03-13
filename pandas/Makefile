@@ -38,9 +38,9 @@ publish-versions:
 
 publish-latest:
 	@echo "Publishing pandas image latest tag..."
-	@docker image tag ${IMG_REPO}:latest ${IMG_REPO}:${VERSION}
+	@docker image tag ${IMG_REPO}:${VERSION} ${IMG_REPO}:latest
 	@docker image push ${IMG_REPO}:latest
-	@docker image tag ${IMG_REPO}:latest-jupyter ${IMG_REPO}:${VERSION}-jupyter
+	@docker image tag ${IMG_REPO}:${VERSION}-jupyter  ${IMG_REPO}:latest-jupyter
 	@docker image push ${IMG_REPO}:latest-jupyter
 
 
