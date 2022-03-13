@@ -51,4 +51,4 @@ clean:
 	-docker rmi $$(docker images | grep '${IMG_REPO}' | awk '{ print $$1,$$2 }' | tr ' ' ':' | xargs -I {}) 2> /dev/null
 
 all: clean lock build jupyter dist
-.PHONY: all clean lock build dist jupyter run-jupyter publish
+.PHONY: all clean lock build dist jupyter run-jupyter publish-versions publish-latest
