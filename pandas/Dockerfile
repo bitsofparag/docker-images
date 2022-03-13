@@ -13,6 +13,7 @@ ENV PYTHONDONTWRITEBYTECODE=1
 
 RUN mamba install --yes conda-lock
 
+WORKDIR /tmp
 COPY environment.yml environment.yml
 COPY conda-lock.yml conda-lock.yml
 
@@ -62,6 +63,6 @@ SHELL ["micromamba", "run", "-n", "base", "/bin/bash", "-c"]
 FROM jupyter/base-notebook:python-3.9.10 as jupyter
 LABEL author="Parag M."
 LABEL description="Minimal Jupyter image for running pandas-based data-science notebooks"
-COPY --from=build /usr/local/src/environment.yml .
+COPY --from=build /tmp/environment.yml .
 RUN conda-env update -n base --file environment.yml
 WORKDIR /usr/local/src

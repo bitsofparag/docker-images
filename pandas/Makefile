@@ -27,9 +27,9 @@ jupyter:
 		-t ${IMG_REPO}:${VERSION}-jupyter .
 
 run-jupyter:
-	@docker run -it --rm -p 10000:8888 \
+	@docker run -it --rm -p 8888:8888 \
 		--name pandas-notebook \
-		-v "${NOTEBOOKS}":/usr/local/src ${IMG_REPO}:jupyter
+		-v "${NOTEBOOKS}":/usr/local/src ${IMG_REPO}:${VERSION}-jupyter
 
 publish-versions:
 	@echo "Publishing pandas image version ${VERSION}..."
