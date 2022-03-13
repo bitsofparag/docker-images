@@ -3,7 +3,7 @@
 FROM condaforge/mambaforge:4.11.0-4 as build
 
 LABEL author="Parag M."
-LABEL description="Dev image for working with pandas"
+LABEL description="Development image for working with pandas"
 
 ARG PLATFORM=linux-64
 
