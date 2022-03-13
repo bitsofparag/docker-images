@@ -31,10 +31,18 @@ run-jupyter:
 		--name pandas-notebook \
 		-v "${NOTEBOOKS}":/usr/local/src ${IMG_REPO}:jupyter
 
-publish:
+publish-versions:
 	@echo "Publishing pandas image version ${VERSION}..."
 	@docker image push ${IMG_REPO}:${VERSION}
 	@docker image push ${IMG_REPO}:${VERSION}-jupyter
+
+publish-latest:
+	@echo "Publishing pandas latest tag..."
+	@docker image tag ${IMG_REPO}:latest ${IMG_REPO}:${VERSION}
+	@docker image push ${IMG_REPO}:latest
+	@docker image tag ${IMG_REPO}:latest-jupyter ${IMG_REPO}:${VERSION}-jupyter
+	@docker image push ${IMG_REPO}:latest-jupyter
+
 
 clean:
 	rm -rf *.lock*
