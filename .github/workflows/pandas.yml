@@ -33,7 +33,7 @@ jobs:
           files: |
             ./pandas
       - name: Publish pandas image if changed
-        if: steps.changed-pandas-files.outputs.only_changed == 'true'
+        if: steps.changed-pandas-files.outputs.any_changed == 'true'
         run: |
           cd pandas
           make dist
