@@ -1,2 +1,4 @@
-Makefile
-examples
+*
+*.*
+!conda-lock.yml
+!environment.yml
